@@ -4,7 +4,7 @@ export default function GenerateIA() {
   
   return (
     <>
-      <h1 className="text-6xl font-extrabold">Generar Receta con IA</h1>
+      <h1 className="text-6xl font-extrabold text-center">Generar Receta con IA</h1>
 
       <div className="max-w-4xl mx-auto">
         <form  
