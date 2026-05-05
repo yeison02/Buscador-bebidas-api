@@ -2,9 +2,13 @@ import { StateCreator } from "zustand";
 
 
 export type AISliceType = {
-    recipe: string
+    recipe: string,
+    generateRecipe: (prompt: string) => Promise<void>
 }
 
 export const createAISlice : StateCreator<AISliceType, [], [], AISliceType> = () => ({
-   recipe: ''   
+   recipe: '',
+   generateRecipe: async (prompt) => {
+        console.log(prompt)
+   }
 })

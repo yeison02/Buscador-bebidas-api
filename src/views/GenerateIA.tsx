@@ -5,6 +5,7 @@ import { useAppStore } from "../stores/useAppStore"
 export default function GenerateIA() {
 
   const showNotification = useAppStore((state) => state.showNotification)
+  const generateRecipe = useAppStore((state) => state.generateRecipe)
 
   const handleSubmit = ( e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
@@ -19,6 +20,7 @@ export default function GenerateIA() {
       })
       return
     }
+    generateRecipe(prompt)
   }
 
   return (
