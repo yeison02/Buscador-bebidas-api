@@ -1,14 +1,33 @@
+import { useAppStore } from "../stores/useAppStore"
+
+
 
 export default function GenerateIA() {
-  
-  
+
+  const showNotification = useAppStore((state) => state.showNotification)
+
+  const handleSubmit = ( e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+    
+    const form = new FormData(e.currentTarget)
+    const prompt = form.get('prompt') as string
+
+    if(prompt.trim() === ''){
+      showNotification({
+        text: 'La búsqueda no puede estar vacía',
+        error: true
+      })
+      return
+    }
+  }
+
   return (
     <>
       <h1 className="text-6xl font-extrabold text-center">Generar Receta con IA</h1>
 
       <div className="max-w-4xl mx-auto">
         <form  
-          onSubmit={() => {}}
+          onSubmit={handleSubmit}
           className='flex flex-col space-y-3 py-10'
         >
           <div className="relative">

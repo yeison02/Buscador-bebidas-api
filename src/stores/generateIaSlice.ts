@@ -1,12 +1,10 @@
 import { StateCreator } from "zustand";
 
 
-export type GenerateIaSliceType = {
-    
+export type AISliceType = {
+    recipe: string
 }
 
-export const createAISlice : StateCreator<GenerateIaSliceType> = () => ({
-   
-   
-    
+export const createAISlice : StateCreator<AISliceType, [], [], AISliceType> = () => ({
+   recipe: ''   
 })
